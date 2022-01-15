@@ -1,10 +1,10 @@
-import styles from "./Button.module.css"
 
-const Button = () => {
+
+const Button = (props) => {
     return (
-        <div>
-
-        </div>
+        <>
+            <button>{props.label}</button>
+        </>
     )
 }
 
