@@ -1,0 +1,26 @@
+.banner {
+    width: 100%;
+    height: 40rem;
+    background-image: url("../../img/banner.jpg");
+    background-size: cover;
+    -webkit-box-align: center;
+    -webkit-box-pack: center;
+    display: -webkit-box;
+    .content {
+        text-align: center;
+        color: $primaryColor;
+        display: flex;
+        flex-direction: column;
+        background-color: $secondaryColor;
+        border-radius: 10px;
+        padding: 20px;
+        width: 35rem;
+        h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        p {
+            font-size: 1.5rem;
+        }
+    }
+}

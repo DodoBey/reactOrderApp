@@ -1,0 +1,52 @@
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    height: 5rem;
+    width: 100%;
+    background-color: $forthColor;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: $secondaryColor;
+    .leftGrid {
+        margin-left: 10%;
+        align-items: center;
+        h1 {
+            font-size: 2rem;
+            font-weight: bold;
+        }
+    }
+
+    .rightGrid {
+        display: flex;
+        flex-direction: row;
+        gap: 8px;
+        margin-right: 10%;
+        align-items: center;
+        font-size: 1.5rem;
+        background-color: $primaryColor;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 10px;
+        &:hover {
+            cursor: pointer;
+            background-color: $alternateColor;
+            .amount {
+                background-color: $primaryColor;
+            }
+        }
+        .icon {
+            width: 1.4rem;
+            height: 1.4rem;
+        }
+        .amount {
+            text-align: center;
+            padding: 0 3px;
+            border-radius: 5px;
+            background-color: $alternateColor;
+        }
+    }
+}
