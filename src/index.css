@@ -127,3 +127,12 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+
+* {
+  font-family: "Dongle", sans-serif !important;
+}
+
+#root {
+  height: 100vh;
+  background-color: #6d6875;
+}

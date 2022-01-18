@@ -1,4 +1,5 @@
 import React from 'react'
+import Cart from './Cart/Cart'
 import Header from './Header/Header'
 import styles from './Main.module.scss'
 import Banner from './UI/Banner'
@@ -6,11 +7,14 @@ import MealList from './UI/MealList'
 
 const Main = () => {
     return (
-        <div className={styles.main}>
+        <>
             <Header />
-            <Banner />
-            <MealList />
-        </div>
+            <main className={styles.main}>
+                <Banner />
+                <MealList />
+                <Cart />
+            </main>
+        </>
     )
 }
 
