@@ -1,14 +1,6 @@
 @import "./variables";
 @import "./UI/MealList.module";
-@import "./UI/Button.module";
 @import "./Header/Header.module";
 @import "./UI/Banner.module";
-
-* {
-    font-family: "Dongle", sans-serif !important;
-}
-
-.main {
-    height: 100vh;
-    background-color: $secondaryColor;
-}
+@import "./UI/Modal.module.scss";
+@import "./Cart/Cart.module.scss";

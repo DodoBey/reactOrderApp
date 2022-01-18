@@ -1,0 +1,45 @@
+.cartItems {
+    .cartItem {
+        font-size: 30px;
+    }
+}
+
+.cartAmount {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: bold;
+    font-size: 35px;
+}
+
+.cartButtons {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 15px;
+    button {
+        font-size: 20px;
+        border-radius: 4px;
+        width: 50px;
+        color: $secondaryColor;
+    }
+    :first-of-type {
+        border: 3px solid $alternateColor;
+        background-color: $fifthColor;
+        &:hover {
+            border: 3px solid $alternateColor;
+            background-color: $primaryColor;
+            cursor: pointer;
+        }
+    }
+
+    :last-of-type {
+        border: 3px solid $fifthColor;
+        background-color: $alternateColor;
+        &:hover {
+            border: 3px solid $alternateColor;
+            background-color: $primaryColor;
+            cursor: pointer;
+        }
+    }
+}

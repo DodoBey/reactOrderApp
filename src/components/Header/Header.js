@@ -3,7 +3,7 @@ import CartIcon from './CartIcon'
 
 const Header = () => {
     return (
-        <div className={styles.header}>
+        <header className={styles.header}>
             <div className={styles.leftGrid}>
                 <h1>Catch a Food</h1>
             </div>
@@ -14,7 +14,7 @@ const Header = () => {
                 <span>Your Cart</span>
                 <span className={styles.amount}>100</span>
             </button>
-        </div>
+        </header>
     )
 }
 
