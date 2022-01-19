@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import AllMeals from './AllMeals'
 import Cart from './Cart/Cart'
 import Header from './Header/Header'
 import styles from './Main.module.scss'
@@ -22,7 +23,7 @@ const Main = () => {
             <Header showCart={showCartHandler} />
             <main className={styles.main}>
                 <Banner />
-                <MealList />
+                <AllMeals />
                 {showCart && <Cart hideCart={hideCartHandler} />}
             </main>
         </>

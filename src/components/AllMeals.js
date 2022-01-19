@@ -1,3 +1,5 @@
+import MealList from "./UI/MealList"
+
 const Meals = [
     {
         id: 'm1',
@@ -31,4 +33,21 @@ const Meals = [
     }
 ]
 
-export default Meals
+const AllMeals = () => {
+
+    const allMeals = Meals.map((meal) => (
+        <MealList
+            id={meal.id}
+            key={meal.id}
+            name={meal.name}
+            description={meal.description}
+            price={meal.price}
+        />
+    ))
+
+
+
+    return <>{allMeals}</>
+}
+
+export default AllMeals
