@@ -7,10 +7,30 @@ const Cart = (props) => {
 
     const ctx = useContext(CartContext)
 
-    console.log(ctx)
+    const cartItemAddHandler = (item) => {
+        ctx.addItem({ ...item, amount: 1 })
+    }
+
+    const cartItemRemoveHandler = (id) => {
+        ctx.deleteItem(id)
+    }
 
     const cartItems = (
-        <ul className={styles.cartItems}>{ctx.items.map((item) => <li key={item.id} className={styles.cartItem}>{item.name}</li>)}</ul>)
+        <ul className={styles.cartItems}>{ctx.items.map((item) =>
+            <li key={item.id} className={styles.cartItem}>
+                <div className={styles.cartLeft}>
+                    <h2 className={styles.cartTitle}>{item.name}</h2>
+                    <div className={styles.cartItemInfo}>
+                        <span className={styles.cartPrice}>${item.price}</span>
+                        <span className={styles.cartPerAmount}>x {item.amount}</span>
+                    </div>
+                </div>
+                <div className={styles.cartButton}>
+                    <button onClick={() => cartItemRemoveHandler(item.id)}>-</button>
+                    <button onClick={() => cartItemAddHandler(item)}>+</button>
+                </div>
+            </li>
+        )}</ul>)
 
     return (
         <Modal hideCart={props.hideCart}>
