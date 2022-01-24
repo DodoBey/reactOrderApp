@@ -43,8 +43,6 @@ const MealList = (props) => {
     return (
         <section className={styles.mealList}>
             <ul>
-                {/* {meals.map((meal) => {
-                    return ( */}
                 <li key={props.id} className={styles.mealItem}>
                     <div className={styles.leftGrid}>
                         <h2>{props.name}</h2>
@@ -62,8 +60,6 @@ const MealList = (props) => {
                         </form>
                     </div>
                 </li>
-                {/* )
-                })} */}
             </ul>
         </section>
     )
