@@ -1,0 +1,68 @@
+.orderForm {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    .inputs {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+        font-size: 20px;
+        input {
+            width: 50%;
+            border: 2px solid $forthColor;
+            border-radius: 4px;
+            background-color: $fifthColor;
+            color: $primaryColor;
+            font-size: 20px;
+            &:focus {
+                border: 2px solid $alternateColor;
+            }
+        }
+    }
+
+    .invalid {
+        p {
+            color: $alternateColor;
+        }
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 15px;
+        button {
+            font-size: 20px;
+            border-radius: 4px;
+            width: 65px;
+            color: $secondaryColor;
+        }
+        :first-of-type {
+            border: 3px solid $alternateColor;
+            background-color: $fifthColor;
+            &:hover {
+                border: 3px solid $alternateColor;
+                background-color: $primaryColor;
+                cursor: pointer;
+            }
+        }
+
+        :last-of-type {
+            border: 3px solid $fifthColor;
+            background-color: $alternateColor;
+            &:hover {
+                border: 3px solid $alternateColor;
+                background-color: $primaryColor;
+                cursor: pointer;
+            }
+            &:disabled,
+            &:disabled:hover,
+            &:disabled:focus {
+                background-color: $secondaryColor;
+                color: $alternateColor;
+                border: 3px solid $fifthColor;
+                cursor: not-allowed;
+            }
+        }
+    }
+}
