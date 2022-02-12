@@ -4,3 +4,12 @@
 @import "./UI/Banner.module";
 @import "./UI/Modal.module.scss";
 @import "./Cart/Cart.module.scss";
+@import "./Cart/Checkout.module";
+
+body {
+    background-color: #6d6875;
+}
+
+.main {
+    margin-bottom: 30px;
+}

@@ -1,41 +1,56 @@
+import { useCallback, useEffect, useState } from "react"
 import MealList from "./UI/MealList"
 
-const Meals = [
-    {
-        id: 'm1',
-        name: 'Pizza',
-        description: 'The Italian art',
-        price: 27.99,
-    },
-    {
-        id: 'm2',
-        name: 'Hamburger',
-        description: 'American style, best in town',
-        price: 17.99,
-    },
-    {
-        id: 'm3',
-        name: 'Sushi',
-        description: 'Finest fish and veggies',
-        price: 22.99,
-    },
-    {
-        id: 'm4',
-        name: 'Ramen',
-        description: 'Your bestfriend...',
-        price: 12.99,
-    },
-    {
-        id: 'm5',
-        name: 'Taco Combo',
-        description: 'From your Mexican Friend',
-        price: 15.99,
-    }
-]
-
 const AllMeals = () => {
+    const [meals, setMeals] = useState([])
+    const [error, setError] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
 
-    const allMeals = Meals.map((meal) => (
+    const fetchMeals = useCallback(async () => {
+        try {
+            const response = await fetch('https://testproject-d9d95-default-rtdb.firebaseio.com/meals.json')
+
+            if (!response.ok) {
+                throw new Error('Something Went Wrong')
+            }
+
+            const data = await response.json()
+
+            const loadedMeals = []
+
+            for (const key in data) {
+                loadedMeals.push({
+                    id: key,
+                    name: data[key].name,
+                    description: data[key].description,
+                    price: data[key].price
+                })
+            }
+            setMeals(loadedMeals)
+            setIsLoading(false)
+        } catch (error) {
+            setIsLoading(false)
+            setError(error.message)
+        }
+    }, [])
+
+    useEffect(() => {
+        fetchMeals()
+    }, [fetchMeals])
+
+    if (isLoading) {
+        return <section>
+            <p style={{ textAlign: 'center', color: 'white', marginTop: '20px', fontSize: '40px' }}>Loading...</p>
+        </section>
+    }
+
+    if (error) {
+        return <section>
+            <p style={{ textAlign: 'center', color: 'red', marginTop: '20px', fontSize: '40px' }}>{error}</p>
+        </section>
+    }
+
+    const allMeals = meals.map((meal) => (
         <MealList
             id={meal.id}
             key={meal.id}
